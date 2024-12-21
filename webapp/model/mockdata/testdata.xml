@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<data>
+    <empStr></empStr>
+    <empTab>
+        <rows>
+            <empId>10001</empId>
+            <empName>John</empName>
+            <salary>40000</salary>
+            <smoker>false</smoker>
+            <currency>EUR</currency>
+            <gender>male</gender>
+            <mStat>false</mStat>
+            <rating>4</rating>
+        </rows>
+        <rows>
+            <empId>10002</empId>
+            <empName>Rohit</empName>
+            <salary>15000</salary>
+            <smoker>false</smoker>
+            <currency>AED</currency>
+            <gender>male</gender>
+            <mStat>false</mStat>
+            <rating>5</rating>
+        </rows>
+        <rows>
+            <empId>10003</empId>
+            <empName>Dan</empName>
+            <salary>19000</salary>
+            <smoker>false</smoker>
+            <currency>USD</currency>
+            <gender>male</gender>
+            <mStat>false</mStat>
+            <rating>5</rating>
+        </rows>
+    </empTab>
+</data>
