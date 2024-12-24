@@ -1,0 +1,101 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:t="sap.ui.table"
+    controllerName="myapp.controller.Main"
+>
+    <t:Table
+        visibleRowCount="5"
+        selectionMode="Single"
+        id="table"
+        rowSelectionChange="onRowSelect"
+    >
+        <t:columns>
+            <t:Column>
+                <t:label>
+                    <Label text="ID" />
+                </t:label>
+                <t:template>
+                    <Text text="{id}" />
+                </t:template>
+            </t:Column>
+            <t:Column label="Name">
+                <t:template>
+                    <Input value="{name}" />
+                </t:template>
+            </t:Column>
+        </t:columns>
+    </t:Table>
+
+    <f:SimpleForm
+        editable="true"
+        id="update-form"
+    >
+        <f:content>
+            <core:Title text="Employee Details" />
+
+            <Label
+                text="ID"
+                required="true"
+            />
+            <Input
+                id="selected-id"
+                value="{id}"
+                placeholder="Enter Employee ID"
+                maxLength="7"
+                width="30%"
+                enabled="false"
+                required="true"
+            />
+
+            <Label
+                text="Name"
+                required="true"
+            />
+            <Input
+                id="name"
+                value="{name}"
+                placeholder="Enter Employee Name"
+                required="true"
+                width="30%"
+            />
+        </f:content>
+        <HBox>
+        <Button
+            text="Update"
+            press="onUpdate"
+            type="Emphasized"
+            class="sapUiSmallMarginEnd"
+        />
+        </HBox>
+    </f:SimpleForm>
+
+     <f:SimpleForm
+        editable="true"
+        id="add-form"
+    >
+        <f:content>
+            <Label
+                text="Name"
+                required="true"
+            />
+            <Input
+                id="add-name"
+                placeholder="Enter Employee name"
+                maxLength="7"
+                width="30%"
+                required="true"
+            />
+        </f:content>
+        <HBox>
+        <Button
+            text="Add"
+            press="onAdd"
+            type="Emphasized"
+            class="sapUiSmallMarginEnd"
+        />
+        </HBox>
+    </f:SimpleForm>
+</mvc:View>
