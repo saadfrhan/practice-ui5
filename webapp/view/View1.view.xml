@@ -1,0 +1,68 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="myapp.controller.View1"
+>
+    <Page title="View 1">
+        <headerContent>
+            <Button
+                icon="sap-icon://action"
+                tooltip="Go to next"
+                press="onNext"
+            />
+        </headerContent>
+        <content>
+            <SearchField id="search" />
+            <List id="list">
+                <items>
+                    <DisplayListItem
+                        label="Apple"
+                        value="apple"
+                    />
+                    <StandardListItem
+                        title="Apple"
+                        description="Most powerful antibiotic"
+                        icon="https://cdn-icons-png.flaticon.com/512/6532/6532383.png"
+                    />
+                    <InputListItem>
+                        <content>
+                            <HBox alignContent="Stretch">
+                                <Label
+                                    text="How many pineapples you want?"
+                                    class="sapUiTinyMarginTop"
+                                />
+                                <Input width="30%" />
+                            </HBox>
+                        </content>
+                    </InputListItem>
+                    <CustomListItem>
+                        <content>
+                            <HBox
+                                alignContent="Stretch"
+                                alignItems="Center"
+                                class="sapUiMediumMarginBegin"
+                            >
+                                <Label text="DO you want Cash-on-Delivery" />
+                                <Switch class="sapUiMediumMarginBegin" />
+                            </HBox>
+                        </content>
+                    </CustomListItem>
+                    <ObjectListItem
+                        title="Pineapple"
+                        intro="Pineapple is amazing for glowing skin"
+                        icon="https://cdn-icons-png.flaticon.com/512/661/661764.png"
+                        number="150 Rs"
+                        numberUnit="per Kg"
+                    />
+                    <FeedListItem
+                        icon="https://hcspire.com/wp-content/uploads/2022/11/screen-shot-2022-11-18-at-11.48.38-am.png"
+                        timestamp="18 Nov"
+                        sender="Sheldon Cooper"
+                        text="Hello, I am Sheldon Cooper."
+                    />
+                    <ActionListItem text="Order Now!" press="onNext"></ActionListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

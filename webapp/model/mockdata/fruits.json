@@ -1,0 +1,158 @@
+{
+    "fruits": [
+        {
+            "name": "Apple",
+            "color": "Red",
+            "taste": "Sweet",
+            "size": "Medium",
+            "price": 1.99,
+            "currency": "USD",
+            "healthBenefits": [
+                "Rich in Vitamin C",
+                "Good for heart"
+            ],
+            "season": "Winter",
+            "availability": "A",
+            "image": "https://i.imgur.com/1a9Yf1v.jpg"
+        },
+        {
+            "name": "Banana",
+            "color": "Yellow",
+            "taste": "Sweet",
+            "size": "Medium",
+            "price": 0.99,
+            "currency": "USD",
+            "healthBenefits": [
+                "Rich in Vitamin B6",
+                "Good for digestion"
+            ],
+            "season": "All",
+            "availability": "A",
+            "image": "https://i"
+        },
+        {
+            "name": "Orange",
+            "color": "Orange",
+            "taste": "Sweet",
+            "size": "Medium",
+            "price": 1.49,
+            "currency": "USD",
+            "healthBenefits": [
+                "Rich in Vitamin C",
+                "Good for skin"
+            ],
+            "season": "Winter",
+            "availability": "A",
+            "image": "https://i"
+        }
+    ],
+    "supplier": [
+        {
+            "name": "Fruit World",
+            "sinceWhen": "2010",
+            "contactNo": "1234567890",
+            "person": "John Doe",
+            "noOfStores": 10,
+            "specialty": [
+                {
+                    "name": "Fruits",
+                    "supply": 50
+                },
+                {
+                    "name": "Vegetables",
+                    "supply": 30
+                },
+                {
+                    "name": "Dairy",
+                    "supply": 20
+                }
+
+
+            ],
+            "city": "New York"
+        },
+        {
+            "name": "Fruit Mart",
+            "sinceWhen": "2015",
+            "contactNo": "1234567890",
+            "person": "Jane Doe",
+            "noOfStores": 5,
+            "specialty": [
+                {
+                    "name": "Fruits",
+                    "supply": 70
+                },
+                {
+                    "name": "Vegetables",
+                    "supply": 20
+                },
+                {
+                    "name": "Dairy",
+                    "supply": 10
+                }
+            ],
+            "city": "New Jersey"
+        },
+        {
+            "name": "Fruit Kingdom",
+            "sinceWhen": "2018",
+            "contactNo": "1234567890",
+            "person": "John Doe",
+            "noOfStores": 15,
+            "specialty": [
+                {
+                    "name": "Fruits",
+                    "supply": 60
+                },
+                {
+                    "name": "Vegetables",
+                    "supply": 30
+                },
+                {
+                    "name": "Dairy",
+                    "supply": 10
+                }
+            ],
+            "city": "California"
+        }
+
+    ]  ,
+    "cities": [
+        {
+            "name": "New York",
+            "state": "New York",
+            "population": 8000000,
+            "famousFor": "Apple"
+        },
+        {
+            "name": "New Jersey",
+            "state": "New Jersey",
+            "population": 5000000,
+            "famousFor": "Banana"
+        },
+        {
+            "name": "California",
+            "state": "California",
+            "population": 10000000,
+            "famousFor": "Orange"
+        }
+    ] ,
+    "status": [
+        {
+            "key": "A",
+            "value": "Available"
+        },
+        {
+            "key": "D",
+            "value": "Discontinued"
+        },
+        {
+            "key": "O",
+            "value": "Out of Stock"
+        },
+        {
+            "key": "P",
+            "value": "Paid"
+        }
+    ]
+}

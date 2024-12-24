@@ -1,6 +1,35 @@
 {
-    "sap.app": {
-        "id": "mynode",
-        "type": "application"
+  "sap.app": {
+    "id": "myapp",
+    "type": "application",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "ach": "CA-UI5-CON",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "i18n": "i18n/i18n.properties"
+  },
+  "sap.ui": {
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": ["sap_horizon", "sap_horizon_dark"],
+    "technology": "UI5"
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.100.2",
+      "libs": {
+        "sap.m": {
+          "minVersion": "1.100.2"
+        },
+        "sap.ui.layout": {
+          "minVersion": "latest"
+        }
+      }
     }
+  }
 }
