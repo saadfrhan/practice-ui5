@@ -1,17 +1,84 @@
-<mvc:View
+<mvc:View xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     controllerName="myapp.controller.View2"
+    xmlns:f="sap.ui.layout.form"
 >
     <Page title="View 2" showNavButton="true" navButtonPress="onBack">
         <content>
-            <ObjectHeader title="Litchi" icon="https://cdn3d.iconscout.com/3d/premium/thumb/lychee-3d-icon-download-in-png-blend-fbx-gltf-file-formats--delicious-logo-litchi-organic-fruits-pack-food-drink-icons-4873932.png" intro="Peel off to enjoy rich vitamins" number="100 Rs." numberUnit="Kg." ></ObjectHeader>
+            <ObjectHeader title="{name}" icon="{image}" intro="{healthBenefit[0]}" number="{price}" numberUnit="{curr}" ></ObjectHeader>
 
             <IconTabBar>
                 <items>
-                    <IconTabFilter text="More Info" icon="sap-icon://warning"></IconTabFilter>
-                    <IconTabFilter text="Suppliers" icon="sap-icon://supplier"></IconTabFilter>
-                    <IconTabFilter text="Cities" icon="sap-icon://home"></IconTabFilter>
+                    <IconTabFilter text="More Info" icon="sap-icon://warning">
+                        <f:SimpleForm id="form-details">
+                            <f:content>
+                                <Label text="Name"></Label>
+                                <Text text="{name}"></Text>
+                                 <Label text="Taste"></Label>
+                                <Text text="{taste}"></Text>
+                                 <Label text="Price"></Label>
+                                <Text text="{price} {curr}"></Text>
+                                 <Label text="Color"></Label>
+                                <Text text="{color}"></Text>
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter text="Suppliers" icon="sap-icon://supplier">
+                        <Table id="supplier-tab" items="{/supplier}" itemPress="onSupplier">
+                            <columns>
+                                <Column >
+                                    <header>
+                                        <Label text="Name"></Label>
+                                    </header>
+                                </Column>
+                                 <Column>
+                                    <header>
+                                        <Label text="City"></Label>
+                                    </header>
+                                </Column>
+                                 <Column minScreenWidth="Tablet" demandPopin="true">
+                                    <header>
+                                        <Label text="Contact"></Label>
+                                    </header>
+                                </Column>
+                                 <Column minScreenWidth="Tablet">
+                                    <header>
+                                        <Label text="Since"></Label>
+                                    </header>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem type="Navigation">
+                                    <cells>
+                                        <Text text="{name}"></Text>
+                                        <Input value="{city}"></Input>
+                                        <Text text="{person} {contactNo}"></Text>
+                                        <Text text="{sinceWhen}"></Text>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                    <IconTabFilter text="Cities" icon="sap-icon://home">
+                        <Select items="{/cities}">
+                            <items>
+                                <core:Item text="{name}" key="{name}"></core:Item>
+                            </items>
+                        </Select>
+
+                        <ComboBox items="{/cities}">
+                            <items>
+                                <core:Item text="{name}" key="{name}"></core:Item>
+                            </items>
+                        </ComboBox>
+
+                        <MultiComboBox items="{/cities}">
+                            <items>
+                                <core:Item text="{name}" key="{name}"></core:Item>
+                            </items>
+                        </MultiComboBox>
+                    </IconTabFilter>
                 </items>
             </IconTabBar>
         </content>

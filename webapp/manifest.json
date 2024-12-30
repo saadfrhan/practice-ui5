@@ -30,6 +30,65 @@
           "minVersion": "latest"
         }
       }
+    },
+    "rootView": {
+      "id": "root",
+      "viewName": "myapp.view.Main",
+      "type": "XML"
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewPath": "myapp.view",
+        "viewType": "XML",
+        "controlId": "app-container"
+      },
+      "routes": [
+        {
+          "name": "master",
+          "pattern": "",
+          "target": ["sidebar", "empty"]
+        },
+        {
+          "name": "detail",
+          "pattern": "fruits/{fruitId}",
+          "target": ["sidebar", "fruit"]
+        }
+      ],
+      "targets": {
+        "sidebar": {
+          "viewName": "View1",
+          "viewId": "view1",
+          "controlAggregation": "masterPages"
+        },
+        "empty": {
+          "viewName": "Empty",
+          "viewId": "empty",
+          "controlAggregation": "detailPages"
+        },
+        "fruit": {
+          "viewName": "View2",
+          "viewId": "view2",
+          "controlAggregation": "detailPages",
+          "clearControlAggregation": true
+        }
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/mockdata/fruits.json"
+      },
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleUrl": "i18n/i18n.properties"
+        }
+      }
     }
   }
 }

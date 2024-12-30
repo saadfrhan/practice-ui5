@@ -1,7 +1,7 @@
 {
     "fruits": [
         {
-            "name": "Apple",
+            "name": "Swple",
             "color": "Red",
             "taste": "Sweet",
             "size": "Medium",
@@ -27,7 +27,7 @@
                 "Good for digestion"
             ],
             "season": "All",
-            "availability": "A",
+            "availability": "D",
             "image": "https://i"
         },
         {
@@ -42,7 +42,7 @@
                 "Good for skin"
             ],
             "season": "Winter",
-            "availability": "A",
+            "availability": "O",
             "image": "https://i"
         }
     ],

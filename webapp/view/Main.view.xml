@@ -3,5 +3,5 @@
     xmlns="sap.m"
     controllerName="myapp.controller.Main"
 >
-    <App id="app-container" />
+    <SplitApp id="app-container" />
 </mvc:View>

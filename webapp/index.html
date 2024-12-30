@@ -15,14 +15,17 @@
     ></script>
 
     <script>
-      const compContainer = new sap.ui.core.ComponentContainer({
-        name: "myapp",
-      });
+    
+      
+   
+        const oComponentContainer = new sap.ui.core.ComponentContainer({
+          name: "myapp"
+        });
+        oComponentContainer.placeAt("content");
 
-      compContainer.placeAt("content");
     </script>
   </head>
   <body class="sapUiBody">
-	<div id="content"></div>
-</body>
+    <div id="content"></div>
+  </body>
 </html>
