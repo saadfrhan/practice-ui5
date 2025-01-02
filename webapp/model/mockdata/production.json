@@ -1,0 +1,94 @@
+{
+  "production": {
+    "id": "0129371",
+    "planned_qty": 5000,
+    "confirmed_qty": 5000,
+    "product_order_status": "In Progress",
+    "company": "AI Comp",
+    "material_desc": "Plastic",
+    "user": {
+      "name": "John Doe",
+      "id": "8937839",
+      "shift": "A"
+    },
+    "workcenter": "lamination"
+  },
+  "MaterialProduction": {
+    "Yield": 3408,
+    "Weight": {
+      "Actual": 3408,
+      "Theoretical": 3412
+    },
+    "Batches": [
+      {
+        "ManualBatchNumber": "L01-24-10-001",
+        "Material": 93,
+        "Yield": 800,
+        "Weight": 170
+      }
+    ],
+    "Tags": [
+      {
+        "BatchNumber": 12341,
+        "Start": 450,
+        "End": 480,
+        "Reason": "Contamination"
+      },
+      {
+        "BatchNumber": 12342,
+        "Start": 570,
+        "End": 610,
+        "Reason": "Misalignment"
+      },
+      {
+        "BatchNumber": 12343,
+        "Start": 810,
+        "End": 850,
+        "Reason": "Edge Damage"
+      }
+    ]
+  },
+  "Dates": {
+    "StartDate": "10/4/2024",
+    "EndDate": "11/4/2024",
+    "StartTime": "12:30 PM",
+    "EndTime": "09:45 PM",
+    "PostDate": "10/4/2024"
+  },
+  "Confirmation": {
+    "Type": null,
+    "Operator": {
+      "Name": "Chris Evans",
+      "Code": 89738
+    }
+  },
+
+  "Consumption": [{
+    "BatchNumber": 123456,
+    "Material": 93,
+    "Quantity": 800,
+    "Unit": "M",
+    "Plant": 170,
+    "Location": "171A",
+    "MovementType": 261
+  }],
+  "Activities": [
+    {"field": "Setup", "value": "01 Hour"},
+    {"field": "Machine_Hours", "value": "08 hours"},
+    {"field": "Labour", "value": "02"},
+    {"field": "FOH", "value": 360},
+    {"field": "Utility", "value": "200 kWh"}
+  ],
+  "Properties": [
+    {"field": "Cut_Of_Length", "value": "500 M"},
+   {"field": "Film_Width", "value": "5 M"},
+   {"field":  "Film_Thickness", "value": "2 mm"},
+   {"field":  "Number_Of_Ups_Across", "value": 3},
+   { "field": "Number_Of_Colors", "value": 1},
+    {"field": "Finished_Roll_Width", "value": "1000 M"},
+   { "field": "Cylinder_Size", "value": "50 mm"},
+    {"field": "Printing_Material", "value": "Polyethylene (PE)"},
+   {"field": "Printing_Mode", "value": "Auto"},
+   { "field": "Last_PO_Number", "value": "123456"}
+  ]
+}

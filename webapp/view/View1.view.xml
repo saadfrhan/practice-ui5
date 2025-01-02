@@ -1,65 +1,563 @@
 <mvc:View
-  xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m"
-  controllerName="myapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:t="sap.ui.table"
+    xmlns:l="sap.ui.layout"
+    controllerName="myapp.controller.View1"
 >
-  <Page title="View 1">
-    <headerContent>
-      <Button
-        icon="sap-icon://action"
-        tooltip="Go to next"
-        press="onNext"
-      />
-    </headerContent>
-    <content>
-      <SearchField
-        id="search"
-        search="onSearch"
-      />
-      <List
-        id="list"
-        items="{/fruits}"
-        itemPress="onItemPress"
-        mode="SingleSelectMaster"
-        delete="onDeleteItem"
-        selectionChange="onItemPress"
-      >
-        <headerToolbar>
-          <Toolbar>
-            <ToolbarSpacer></ToolbarSpacer>
-            <Button icon="sap-icon://delete" press="onMultiDelete"></Button>
-          </Toolbar>
-        </headerToolbar>
-        <items>
-          <ObjectListItem
-            title="{name}"
-            type="Navigation"
-            intro="{healthBenefit}"
-            number="{price}"
-            numberUnit="{curr}"
-            icon="{image}"
-          >
-            <attributes>
-              <ObjectAttribute
-                text="{taste}"
-                title="Type"
-              />
-            </attributes>
-            <firstStatus>
-              <ObjectStatus
-                text="{
-                                path: 'availability',
-                                formatter: '.formatter.getStatus'
-                            }"
-                state="{
-                                path: 'availability',
-                                formatter: '.formatter.getStatusText'
-                            }"
-              />
-            </firstStatus>
-          </ObjectListItem>
-        </items>
-      </List>
-    </content>
-  </Page>
+    <Page
+        showHeader="false"
+        backgroundDesign="Solid"
+        class="customBackground"
+    >
+        <Bar class="customHeader">
+            <!-- Left Content -->
+            <contentLeft>
+                <Image
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/2560px-SAP_2011_logo.svg.png"
+                    alt="SAP Logo"
+                    width="50px"
+                />
+                <Text
+                    text="Lamination"
+                    class="customText"
+                />
+                <Button icon="sap-icon://megamenu"
+                type="Ghost"
+                 />
+            </contentLeft>
+
+            <!-- Center Content -->
+            <contentMiddle />
+
+            <!-- Right Content -->
+            <contentRight>
+                <Button
+                    icon="sap-icon://search"
+                    tooltip="Search"
+                type="Emphasized"
+                class="customIconButton"
+
+
+                />
+                <Button icon="sap-icon://overlay"
+                                type="Emphasized"
+                class="customIconButton"
+
+                
+                />
+                <Button
+                    icon="sap-icon://bell"
+                    tooltip="Notifications"
+                                type="Emphasized"
+                class="customIconButton"
+
+
+                />
+                <Avatar
+                    src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA4L2pvYjEwMzQtZWxlbWVudC0wNy00MDMucG5n.png"
+                    displayShape="Circle"
+                    tooltip="Profile"
+                />
+            </contentRight>
+        </Bar>
+
+        <HBox
+            class="sapUiSmallMargin gridContainer"
+            width="100%"
+        >
+            <!-- Left Card -->
+            <VBox class="sapUiSmallMargin borderBlue">
+                <HBox
+                    wrap="Wrap"
+                    justifyContent="SpaceBetween"
+                    width="100%"
+                >
+                    <VBox class="responsiveVBox">
+                        <Text
+                            text="Production Order #"
+                            class="propertyStyle"
+                        />
+                        <Text
+                            text="{/production/id}"
+                            class="sapUiSmallMarginBottom"
+                        />
+                    </VBox>
+                    <VBox class="responsiveVBox">
+                        <Text
+                            text="Planned Qty"
+                            class="propertyStyle"
+                        />
+                        <Text
+                            text="{/production/planned_qty}"
+                            class="sapUiSmallMarginBottom"
+                        />
+                    </VBox>
+                    <VBox class="responsiveVBox">
+                        <Text
+                            text="Confirmed Qty"
+                            class="propertyStyle"
+                        />
+                        <Text
+                            text="{/production/confirmed_qty}"
+                            class="sapUiSmallMarginBottom"
+                        />
+                    </VBox>
+                    <VBox class="responsiveVBox">
+                        <Text
+                            text="Product Order Status"
+                            class="propertyStyle"
+                        />
+                        <Text
+                            text="{/production/product_order_status}"
+                            class="sapUiSmallMarginBottom"
+                        />
+                    </VBox>
+                </HBox>
+                <HBox wrap="Wrap">
+                    <VBox width="25%">
+                        <Text
+                            text="Company"
+                            class="propertyStyle"
+                        />
+                        <Text
+                            text="{/production/company}"
+                            class="sapUiSmallMarginBottom"
+                        />
+                    </VBox>
+                    <VBox width="25%">
+                        <Text
+                            text="Material Description (SFG)"
+                            class="propertyStyle"
+                        />
+                        <Text
+                            text="{/production/material_desc}"
+                            class="sapUiSmallMarginBottom"
+                        />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Right Cards -->
+            <VBox class="sapUiSmallMargin borderGreen">
+                <HBox
+                    wrap="Wrap"
+                    justifyContent="SpaceBetween"
+                >
+                    <VBox class="responsiveVBox">
+                        <Text
+                            text="User"
+                            class="propertyStyle"
+                        />
+                        <Text
+                            text="{/production/user/name}"
+                            class="sapUiSmallMarginBottom"
+                        />
+                    </VBox>
+                    <VBox class="responsiveVBox">
+                        <Text
+                            text="Shift"
+                            class="propertyStyle"
+                        />
+                        <Text
+                            text="{/production/user/shift}"
+                            class="sapUiSmallMarginBottom"
+                        />
+                    </VBox>
+                </HBox>
+                <HBox width="100%">
+                    <VBox class="responsiveVBox">
+                        <Text
+                            text="Employee Code"
+                            class="propertyStyle"
+                        />
+                        <Text
+                            text="{/production/user/id}"
+                            class="sapUiSmallMarginBottom"
+                        />
+                    </VBox>
+                </HBox>
+            </VBox>
+            <VBox class="sapUiSmallMargin borderGreen">
+                <VBox>
+                    <Text
+                        text="Work Center"
+                        class="propertyStyle"
+                    />
+                    <Text
+                        text="{/production/workcenter}"
+                        class="sapUiSmallMarginBottom"
+                    />
+                </VBox>
+            </VBox>
+        </HBox>
+
+        <Toolbar
+            width="100%"
+            height="1px"
+        />
+
+        <HBox
+            class="gridContainer container"
+            width="100%"
+        >
+            <VBox class="formGroup1">
+                <HBox class="formGroupINNER">
+                    <VBox>
+                        <Label text="Enter Production Order #:" />
+                        <Input />
+                    </VBox>
+                    <HBox class="formGroup2">
+                        <VBox>
+                            <Label text="Enter Core Weight:" />
+                            <Input value="20" />
+                        </VBox>
+                        <VBox>
+                            <Label text="Unit" />
+                            <HBox width="10%">
+                                <Input
+                                    value="kg"
+                                    width="5%"
+                                />
+                                <Text
+                                    text="This is the standard core weight, adjustable as needed."
+                                    class="helpertext"
+                                />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </HBox>
+                <VBox class="formGroupINNER" wrap="Wrap">
+                    <Text text="Material Production" class="heading" />
+                    <HBox>
+                        <HBox class="formGroup2">
+                            <VBox>
+                                <Label text="Yield (m)" />
+                                <Input />
+                            </VBox>
+                            <HBox class="formGroup2">
+                                <VBox>
+                                    <Label text="Weight (kg):" />
+                                    <Input
+                                        value="{/MaterialProduction/Weight/Actual}"
+                                    />
+                                </VBox>
+                                    <Button
+                                        text="Get Weight"
+                                        type="Emphasized"
+                                    />
+                            </HBox>
+                        </HBox>
+                        <VBox>
+                            <Text text="Theoretical Weight (kg)" />
+                            <Text
+                                class="greenBoldText"
+                                text="{/MaterialProduction/Weight/Theoretical} KG"
+                            />
+                        </VBox>
+                        <Button
+                            text="Create New Batch"
+                            press="onPressCreateBatch"
+                        />
+                    </HBox>
+                    <HBox>
+                        <Table
+                            items="{/MaterialProduction/Batches}"
+                        >
+                            <columns>
+                                <Column>
+                                    <Label text="Rewinding" />
+                                </Column>
+                                <Column>
+                                    <Label text="Manual Batch" />
+                                </Column>
+                                <Column>
+                                    <Text text="Material" />
+                                </Column>
+                                <Column>
+                                   <Label text="Yield (m)" />
+                                </Column>
+                                <Column>
+                                    <Label text="Weight (kg)" />
+                                </Column>
+                                <Column>
+                                    <Label text="Action" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                    <CheckBox  />
+                                    <Text text="{ManualBatchNumber}" />
+                                    <Text text="{Material}" />
+                                    <Text text="{Yield}" />
+                                    <Text text="{Weight}" />
+                                    <HBox>
+                                        <Button text="Print" type="Emphasized" />
+                                        <Button text="Delete" />
+                                    </HBox>
+                                    </cells>
+                                    </ColumnListItem>
+                                    </items>
+                        </Table>
+                    </HBox>
+                </VBox>
+                <VBox class="formGroupINNER">
+                    <HBox>
+                        <HBox class="formGroup2">
+                            <VBox>
+                                <Label text="Batch" />
+                                <Input />
+                            </VBox>
+                            <HBox class="formGroup2">
+                                <VBox>
+                                    <Label text="Start" />
+                                    <Input
+                                        value="{/MaterialProduction/Weight/Actual}"
+                                    />
+                                </VBox>
+                                <VBox>
+                                    <Label text="End" />
+                                    <Input
+                                        value="{/MaterialProduction/Weight/Actual}"
+                                    />
+                                </VBox>
+
+                                <VBox>
+                                    <Select>
+                                        <items>
+                                            <core:Item
+                                                key="S"
+                                                text="Single"
+                                            />
+                                            <core:Item
+                                                key="M"
+                                                text="Married"
+                                            />
+                                        </items>
+                                    </Select>
+                                </VBox>
+
+                                <VBox>
+                                    <Button
+                                        text="Add Tag"
+                                        type="Emphasized"
+                                    />
+                                </VBox>
+                            </HBox>
+                        </HBox>
+                    </HBox>
+                    <HBox>
+                        <Table
+                            items="{/MaterialProduction/Tags}"
+                        >
+                            <columns>
+                                <Column>
+                                    <Label text="No." />
+                                </Column>
+                                <Column>
+                                    <Label text="Start" />
+                                </Column>
+                                <Column>
+                                    <Label text="End" />
+                                </Column>
+                                <Column>
+                                   <Label text="Reason" />
+                                </Column>
+                                <Column>
+                                    <Label text="Delete" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+
+                                    <Text text="{BatchNumber}" />
+                                    <Text text="{Start}" />
+                                    <Text text="{End}" />
+                                    <Text text="{Reason}" />
+                                    </cells>
+                                    </ColumnListItem>
+                                    </items>
+                        </Table>
+                    </HBox>
+                </VBox>
+                <VBox class="formGroupINNER">
+                    <HBox>
+                        <HBox class="formGroup2">
+                            <HBox class="justifybetween">
+                                <Text text="Consumption" class="heading" />
+                                <Button
+                                    text="Add Another Item"
+                                    type="Emphasized"
+                                />
+                            </HBox>
+                        </HBox>
+                    </HBox>
+                    <HBox>
+                        <Table
+                            items="{/Consumption}"
+                        >
+                            <columns>
+                                <Column>
+                                    <Label text ="Batch #" />
+                                </Column>
+                                <Column>
+                                    <Label text="Material" />
+                                </Column>
+                                <Column>
+                                    <Label text="Quantity" />
+                                </Column>
+                                <Column>
+                                    <Label text="Unit" />
+                                </Column>
+                                <Column>
+                                    <Label text="Plant" />
+                                </Column>
+                                <Column>
+                                    <Label text="Location" />
+                                </Column>
+                                <Column>
+                                    <Label text="Movement Type" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{BatchNumber}" />
+                                        <Text text="{Material}" />
+                                        <Text text="{Quantity}" />
+                                        <Text text="{Unit}" />
+                                        <Text text="{Plant}" />
+                                        <Text text="{Location}" />
+                                        <Text text="{MovementType}" />
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                        </items>
+                        </Table>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <VBox class="card">
+                <VBox class="innercard">
+                    <VBox>
+                        <Label text="Start Date:" />
+                        <DatePicker value="{/Dates/StartDate}" />
+                    </VBox>
+                    <VBox>
+                        <Label text="End Date:" />
+                        <DatePicker value="{/Dates/EndDate}" />
+                    </VBox>
+                    <VBox>
+                        <Label text="Start Time:" />
+                        <Input value="{/Dates/StartTime}" />
+                    </VBox>
+                    <VBox>
+                        <Label text="End Time:" />
+                        <Input value="{/Dates/EndTime}" />
+                    </VBox>
+                </VBox>
+                <VBox class="carddown">
+                    <VBox class="innercard">
+                        <VBox>
+                            <Label text="Post Date:" />
+                            <DatePicker value="{/Dates/PostDate}" />
+                        </VBox>
+                        <VBox>
+                            <Label text="Confirmation Type:" />
+                            <Select width="100%">
+                                <items>
+                                    <core:Item
+                                        key="A"
+                                        text="Option A"
+                                    />
+                                    <core:Item
+                                        key="B"
+                                        text="Option B"
+                                    />
+                                </items>
+                            </Select>
+                        </VBox>
+                        <VBox>
+                            <Label text="Operator" />
+                            <Select
+                                width="100%"
+                                selectedItem="{/Confirmation/Operator/Name} - {/Confirmation/Operator/Code}"
+                            >
+                                <items>
+                                    <core:Item
+                                        key="A"
+                                        text="Chris Evansl - 89738"
+                                    />
+                                    <core:Item
+                                        key="B"
+                                        text="Option B"
+                                    />
+                                </items>
+                            </Select>
+                            <Button
+                                text="Post Production"
+                                type="Emphasized"
+                                width="100%"
+                                press="onPressPostProduction"
+                            />
+                        </VBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+
+            <VBox class="card">
+                <VBox class="innercard">
+                    <Text text="Activities" />
+                    <Table
+                        items="{/Activities}"
+                    >
+                        <columns>
+                            <Column>
+                                <Label text="Activity" />
+                            </Column>
+                            <Column>
+                                <Label text="Values" />
+                            </Column>
+                        </columns>
+                        <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{path: 'field', formatter: '.formatter.replaceUnderscoreWithSpace'}" />
+                                        <Input value="{value}" />
+                                    </cells>
+                                </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+                <VBox class="innercard">
+                    <Text text="Properties" />
+                   <Table
+                        items="{/Properties}"
+                    >
+                        <columns>
+                            <Column>
+                                <Label text="Activity" />
+                            </Column>
+                            <Column>
+                                <Label text="Values" />
+                            </Column>
+                        </columns>
+                        <items>
+                                <ColumnListItem>
+                                    <cells>
+                                                                                <Text text="{path: 'field', formatter: '.formatter.replaceUnderscoreWithSpace'}" />
+
+                                        <Input value="{value}" />
+                                    </cells>
+                                </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+            </VBox>
+        </HBox>
+    </Page>
 </mvc:View>

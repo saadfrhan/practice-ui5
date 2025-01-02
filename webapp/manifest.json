@@ -15,8 +15,8 @@
       "desktop": true,
       "tablet": true,
       "phone": true
+
     },
-    "supportedThemes": ["sap_horizon", "sap_horizon_dark"],
     "technology": "UI5"
   },
   "sap.ui5": {
@@ -26,10 +26,21 @@
         "sap.m": {
           "minVersion": "1.100.2"
         },
+        "sap.ui.core": {
+          "minVersion": "1.100.2"
+        },
+      
         "sap.ui.layout": {
           "minVersion": "latest"
         }
       }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
     },
     "rootView": {
       "id": "root",
@@ -41,36 +52,20 @@
         "routerClass": "sap.m.routing.Router",
         "viewPath": "myapp.view",
         "viewType": "XML",
-        "controlId": "app-container"
+        "controlId": "app",
+        "controlAggregation": "pages"
       },
       "routes": [
         {
-          "name": "master",
+          "name": "main",
           "pattern": "",
-          "target": ["sidebar", "empty"]
-        },
-        {
-          "name": "detail",
-          "pattern": "fruits/{fruitId}",
-          "target": ["sidebar", "fruit"]
+          "target": "main"
         }
       ],
       "targets": {
-        "sidebar": {
+        "main": {
           "viewName": "View1",
-          "viewId": "view1",
-          "controlAggregation": "masterPages"
-        },
-        "empty": {
-          "viewName": "Empty",
-          "viewId": "empty",
-          "controlAggregation": "detailPages"
-        },
-        "fruit": {
-          "viewName": "View2",
-          "viewId": "view2",
-          "controlAggregation": "detailPages",
-          "clearControlAggregation": true
+          "viewId": "view1"
         }
       }
     },
@@ -81,7 +76,7 @@
     "models": {
       "": {
         "type": "sap.ui.model.json.JSONModel",
-        "uri": "model/mockdata/fruits.json"
+        "uri": "model/mockdata/production.json"
       },
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",

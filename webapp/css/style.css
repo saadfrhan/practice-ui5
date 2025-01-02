@@ -1,0 +1,129 @@
+.borderBlue {
+    border: 1px solid #D9D9D9;
+    border-left: 5px solid #0070f3;
+    padding-block: 20px; 
+    padding-inline: 40px;
+}
+
+.borderGreen {
+    border: 1px solid #D9D9D9;
+    border-left: 5px solid #28a745;
+    padding-block: 20px; 
+    padding-inline: 40px;
+}
+
+.propertyStyle {
+    color: #6F7275;
+    margin-bottom: 3px;
+}
+
+.propertyStyleGreen {
+    color: #1A9F1A;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.customBackground {
+    background-color: white;
+}
+
+.gridContainer {
+    display: grid;
+    padding-right: 23px;
+    grid-template-columns: 1fr; /* Default for mobile */
+}
+
+@media (min-width: 1024px) { /* For larger devices */
+    .gridContainer {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+
+.customHeader {
+    background-color: #354A5F;
+}
+
+.customText {
+    color: white;
+    font-weight: bold;
+}
+
+.sapMBtnIcon {
+    color: #D1E8FF;
+}
+
+.sapFAvatarS {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.formGroup1 {
+    display: flex;
+    border-right: 1px solid #D9D9D9;
+    background-color: #f7f7f7;
+}
+
+.fit-width {
+    width: max-content;
+}
+
+.formGroup2 {
+    display: flex;
+    align-items: end;
+    gap: 5px;
+
+    width: 100%;
+}
+
+.formGroupINNER {
+    padding-inline: 30px;
+    padding-top: 18px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.container {
+    border-right: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.helpertext {
+    font-size: 12px;
+    margin-left: 5px;
+    width: 150px;
+}
+
+.card {
+    border-right: 1px solid #D9D9D9;
+    border-top: 1px solid #D9D9D9;
+}
+
+.carddown {
+    border-top: 1px solid #D9D9D9;
+}
+
+.innercard {
+    margin: 30px;
+}
+
+.justifybetween {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.greenBoldText {
+    color: #1A9F1A;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.heading {
+    color: #32363A;
+    font-size: 16px;
+}
+
+.customIconButton {
+    background-color: transparent !important;
+}

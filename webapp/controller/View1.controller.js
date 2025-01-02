@@ -4,8 +4,9 @@ sap.ui.define(
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "myapp/util/formatter",
+    	"sap/m/MessageBox",
   ],
-  function (BaseController, Filter, FilterOperator, formatter) {
+  function (BaseController, Filter, FilterOperator, formatter, MessageBox) {
     return BaseController.extend("myapp.controller.View1", {
       formatter,
       onInit: function() {
@@ -21,6 +22,38 @@ sap.ui.define(
         // const view = this.getView();
         // const appContainer = view.getParent().getParent();
         // appContainer.to("view2");
+
+      },
+      onPressPostProduction: function () {
+        MessageBox.confirm("Are you sure you want to save this production order?", {
+          actions: ["Save", MessageBox.Action.CLOSE],
+          emphasizedAction: "Save",
+          title: "Production Order Save Confirmation",
+          onClose: (action) => {
+            if (action === "Save") {
+              Swal.fire({
+                title: "Production Order Saved Successfully!",
+                icon: "success"
+              });
+            }
+          }
+        });
+
+      },
+      onPressCreateBatch: function () {
+        MessageBox.confirm("Are you sure you want to create new batch?", {
+          actions: ["Yes", MessageBox.Action.CLOSE],
+          emphasizedAction: "Yes",
+          title: "Create New Batch",
+          onClose: (action) => {
+            if (action === "Yes") {
+              Swal.fire({
+                title: "New Batch Created Successfully!",
+                icon: "success"
+              });
+            }
+          }
+        });
 
       },
       onItemPress: function (e) {
